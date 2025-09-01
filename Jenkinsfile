@@ -30,6 +30,8 @@ uv sync
         stage('Test') {
             steps {
                 sh '''
+                # Activating Env
+. .venv/bin/activate
                 pytest
                 '''
             }
@@ -37,6 +39,8 @@ uv sync
         stage('Run') {
             steps {
                 sh '''
+                # Activating Env
+. .venv/bin/activate
                 python src/example.py
                 '''
             }
